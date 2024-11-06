@@ -30,24 +30,25 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            listView1 = new ListView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            checkBox1 = new CheckBox();
+            button4 = new Button();
             radioButton1 = new RadioButton();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            listView1 = new ListView();
             columnTask = new ColumnHeader();
             columnDeadline = new ColumnHeader();
             columnNotes = new ColumnHeader();
-            button4 = new Button();
-            checkBox1 = new CheckBox();
             columnPriority = new ColumnHeader();
             columnStatus = new ColumnHeader();
+            checkBox2 = new CheckBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(radioButton1);
@@ -82,91 +84,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "ADD TASK";
             // 
-            // label2
+            // checkBox1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 41);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 17);
-            label2.TabIndex = 0;
-            label2.Text = "Task";
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(392, 40);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(64, 21);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "Done?";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 70);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 17);
-            label3.TabIndex = 1;
-            label3.Text = "Deadline";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 99);
-            label4.Name = "label4";
-            label4.Size = new Size(43, 17);
-            label4.TabIndex = 2;
-            label4.Text = "Notes";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(72, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(195, 25);
-            textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(71, 67);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(195, 25);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(72, 96);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(195, 25);
-            textBox3.TabIndex = 5;
-            textBox3.TextChanged += textBox3_TextChanged;
-            // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnTask, columnDeadline, columnNotes, columnPriority, columnStatus });
-            listView1.Location = new Point(3, 188);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(566, 139);
-            listView1.TabIndex = 4;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(27, 149);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(125, 149);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Fix";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(230, 149);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 8;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            button4.Location = new Point(484, 149);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 10;
+            button4.Text = "Save";
+            button4.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -178,6 +113,92 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Urgent?";
             radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(230, 149);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 8;
+            button3.Text = "Delete";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(125, 149);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 7;
+            button2.Text = "Fix";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(27, 149);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(72, 96);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(195, 25);
+            textBox3.TabIndex = 5;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(71, 67);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(195, 25);
+            textBox2.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(72, 38);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(195, 25);
+            textBox1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 99);
+            label4.Name = "label4";
+            label4.Size = new Size(43, 17);
+            label4.TabIndex = 2;
+            label4.Text = "Notes";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 70);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 17);
+            label3.TabIndex = 1;
+            label3.Text = "Deadline";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(33, 17);
+            label2.TabIndex = 0;
+            label2.Text = "Task";
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnTask, columnDeadline, columnNotes, columnPriority, columnStatus });
+            listView1.Location = new Point(3, 188);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(566, 139);
+            listView1.TabIndex = 4;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
             // columnTask
             // 
@@ -194,25 +215,6 @@
             columnNotes.Text = "Notes";
             columnNotes.Width = 250;
             // 
-            // button4
-            // 
-            button4.Location = new Point(484, 149);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 10;
-            button4.Text = "Save";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(392, 40);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(64, 21);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "Done?";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // columnPriority
             // 
             columnPriority.Text = "Prioriry";
@@ -220,6 +222,16 @@
             // columnStatus
             // 
             columnStatus.Text = "Status";
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(314, 82);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(87, 21);
+            checkBox2.TabIndex = 12;
+            checkBox2.Text = "checkBox2";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // Todolist
             // 
@@ -259,5 +271,6 @@
         private Button button4;
         private ColumnHeader columnPriority;
         private ColumnHeader columnStatus;
+        private CheckBox checkBox2;
     }
 }
