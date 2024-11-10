@@ -1,6 +1,6 @@
 ﻿namespace Todolist
 {
-    partial class Todolist
+    partial class frmToDoList
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Todolist));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmToDoList));
             label1 = new Label();
             btnSave = new Button();
             rbtUrgent = new RadioButton();
@@ -38,17 +38,18 @@
             txtNotes = new TextBox();
             txtDeadline = new TextBox();
             txtTask = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
+            lblNotes = new Label();
+            lblDeadline = new Label();
+            lblTask = new Label();
             lsvTask = new ListView();
             columnTask = new ColumnHeader();
             columnDeadline = new ColumnHeader();
             columnNotes = new ColumnHeader();
             columnPriority = new ColumnHeader();
             columnStatus = new ColumnHeader();
-            label5 = new Label();
-            rbtDone = new RadioButton();
+            lblAddYourTasks = new Label();
+            rbtTrivial = new RadioButton();
+            chkDone = new CheckBox();
             SuspendLayout();
             // 
             // label1
@@ -65,25 +66,26 @@
             btnSave.BackgroundImageLayout = ImageLayout.Zoom;
             btnSave.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.DarkSeaGreen;
-            btnSave.Location = new Point(152, 198);
+            btnSave.Location = new Point(154, 144);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(65, 76);
             btnSave.TabIndex = 10;
             btnSave.Text = "Save";
             btnSave.TextAlign = ContentAlignment.BottomCenter;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // rbtUrgent
             // 
             rbtUrgent.AutoSize = true;
-            rbtUrgent.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            rbtUrgent.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             rbtUrgent.ForeColor = Color.DarkSeaGreen;
-            rbtUrgent.Location = new Point(12, 162);
+            rbtUrgent.Location = new Point(12, 119);
             rbtUrgent.Name = "rbtUrgent";
-            rbtUrgent.Size = new Size(74, 21);
+            rbtUrgent.Size = new Size(63, 19);
             rbtUrgent.TabIndex = 9;
             rbtUrgent.TabStop = true;
-            rbtUrgent.Text = "Urgent?";
+            rbtUrgent.Text = "Urgent";
             rbtUrgent.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -92,13 +94,14 @@
             btnDelete.BackgroundImageLayout = ImageLayout.Zoom;
             btnDelete.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.DarkSeaGreen;
-            btnDelete.Location = new Point(223, 198);
+            btnDelete.Location = new Point(223, 144);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(65, 76);
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.TextAlign = ContentAlignment.BottomCenter;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnFix
             // 
@@ -106,13 +109,14 @@
             btnFix.BackgroundImageLayout = ImageLayout.Zoom;
             btnFix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnFix.ForeColor = Color.DarkSeaGreen;
-            btnFix.Location = new Point(81, 198);
+            btnFix.Location = new Point(83, 144);
             btnFix.Name = "btnFix";
             btnFix.Size = new Size(65, 76);
             btnFix.TabIndex = 7;
             btnFix.Text = "Fix";
             btnFix.TextAlign = ContentAlignment.BottomCenter;
             btnFix.UseVisualStyleBackColor = true;
+            btnFix.Click += btnFix_Click;
             // 
             // btnAdd
             // 
@@ -120,77 +124,78 @@
             btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
             btnAdd.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.DarkSeaGreen;
-            btnAdd.Location = new Point(10, 198);
+            btnAdd.Location = new Point(12, 144);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(65, 76);
             btnAdd.TabIndex = 6;
             btnAdd.Text = "Add";
             btnAdd.TextAlign = ContentAlignment.BottomCenter;
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // txtNotes
             // 
-            txtNotes.Location = new Point(75, 121);
+            txtNotes.Location = new Point(71, 91);
             txtNotes.Name = "txtNotes";
-            txtNotes.Size = new Size(207, 23);
+            txtNotes.Size = new Size(217, 22);
             txtNotes.TabIndex = 5;
             // 
             // txtDeadline
             // 
-            txtDeadline.Location = new Point(75, 82);
+            txtDeadline.Location = new Point(71, 63);
             txtDeadline.Name = "txtDeadline";
-            txtDeadline.Size = new Size(207, 23);
+            txtDeadline.Size = new Size(217, 22);
             txtDeadline.TabIndex = 4;
             // 
             // txtTask
             // 
-            txtTask.Location = new Point(75, 43);
+            txtTask.Location = new Point(71, 35);
             txtTask.Name = "txtTask";
-            txtTask.Size = new Size(207, 23);
+            txtTask.Size = new Size(217, 22);
             txtTask.TabIndex = 3;
-            txtTask.TextChanged += txtTask_TextChanged;
             // 
-            // label4
+            // lblNotes
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.DarkSeaGreen;
-            label4.Location = new Point(12, 124);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 17);
-            label4.TabIndex = 2;
-            label4.Text = "Notes";
+            lblNotes.AutoSize = true;
+            lblNotes.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNotes.ForeColor = Color.DarkSeaGreen;
+            lblNotes.Location = new Point(12, 92);
+            lblNotes.Name = "lblNotes";
+            lblNotes.Size = new Size(38, 15);
+            lblNotes.TabIndex = 2;
+            lblNotes.Text = "Notes";
             // 
-            // label3
+            // lblDeadline
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.DarkSeaGreen;
-            label3.Location = new Point(12, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 17);
-            label3.TabIndex = 1;
-            label3.Text = "Deadline";
+            lblDeadline.AutoSize = true;
+            lblDeadline.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDeadline.ForeColor = Color.DarkSeaGreen;
+            lblDeadline.Location = new Point(10, 64);
+            lblDeadline.Name = "lblDeadline";
+            lblDeadline.Size = new Size(55, 15);
+            lblDeadline.TabIndex = 1;
+            lblDeadline.Text = "Deadline";
             // 
-            // label2
+            // lblTask
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.MediumSeaGreen;
-            label2.Location = new Point(12, 46);
-            label2.Name = "label2";
-            label2.Size = new Size(34, 17);
-            label2.TabIndex = 0;
-            label2.Text = "Task";
+            lblTask.AutoSize = true;
+            lblTask.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTask.ForeColor = Color.MediumSeaGreen;
+            lblTask.Location = new Point(12, 36);
+            lblTask.Name = "lblTask";
+            lblTask.Size = new Size(34, 15);
+            lblTask.TabIndex = 0;
+            lblTask.Text = "Task";
             // 
             // lsvTask
             // 
             lsvTask.Columns.AddRange(new ColumnHeader[] { columnTask, columnDeadline, columnNotes, columnPriority, columnStatus });
             lsvTask.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lsvTask.ForeColor = SystemColors.ControlText;
-            lsvTask.Location = new Point(299, 9);
+            lsvTask.FullRowSelect = true;
+            lsvTask.Location = new Point(294, 9);
             lsvTask.Name = "lsvTask";
-            lsvTask.Size = new Size(549, 265);
+            lsvTask.Size = new Size(553, 211);
             lsvTask.TabIndex = 4;
             lsvTask.UseCompatibleStateImageBehavior = false;
             lsvTask.View = View.Details;
@@ -204,7 +209,7 @@
             // columnDeadline
             // 
             columnDeadline.Text = "Deadline";
-            columnDeadline.Width = 80;
+            columnDeadline.Width = 75;
             // 
             // columnNotes
             // 
@@ -213,50 +218,65 @@
             // 
             // columnPriority
             // 
-            columnPriority.Text = "Prioriry";
+            columnPriority.Text = "Priority";
+            columnPriority.Width = 75;
             // 
             // columnStatus
             // 
             columnStatus.Text = "Status";
+            columnStatus.Width = 50;
             // 
-            // label5
+            // lblAddYourTasks
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.DarkSeaGreen;
-            label5.Location = new Point(12, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(150, 21);
-            label5.TabIndex = 12;
-            label5.Text = "ADD YOUR TASKS";
+            lblAddYourTasks.AutoSize = true;
+            lblAddYourTasks.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAddYourTasks.ForeColor = Color.DarkSeaGreen;
+            lblAddYourTasks.Location = new Point(12, 9);
+            lblAddYourTasks.Name = "lblAddYourTasks";
+            lblAddYourTasks.Size = new Size(180, 23);
+            lblAddYourTasks.TabIndex = 12;
+            lblAddYourTasks.Text = "ADD YOUR TASKS";
             // 
-            // rbtDone
+            // rbtTrivial
             // 
-            rbtDone.AutoSize = true;
-            rbtDone.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            rbtDone.ForeColor = Color.DarkSeaGreen;
-            rbtDone.Location = new Point(106, 162);
-            rbtDone.Name = "rbtDone";
-            rbtDone.Size = new Size(64, 21);
-            rbtDone.TabIndex = 13;
-            rbtDone.TabStop = true;
-            rbtDone.Text = "Done?";
-            rbtDone.UseVisualStyleBackColor = true;
+            rbtTrivial.AutoSize = true;
+            rbtTrivial.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            rbtTrivial.ForeColor = Color.DarkSeaGreen;
+            rbtTrivial.Location = new Point(81, 119);
+            rbtTrivial.Name = "rbtTrivial";
+            rbtTrivial.Size = new Size(61, 19);
+            rbtTrivial.TabIndex = 13;
+            rbtTrivial.TabStop = true;
+            rbtTrivial.Text = "Trivial";
+            rbtTrivial.UseVisualStyleBackColor = true;
             // 
-            // Todolist
+            // chkDone
+            // 
+            chkDone.AutoSize = true;
+            chkDone.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            chkDone.ForeColor = Color.DarkSeaGreen;
+            chkDone.Location = new Point(234, 120);
+            chkDone.Name = "chkDone";
+            chkDone.Size = new Size(54, 19);
+            chkDone.TabIndex = 14;
+            chkDone.Text = "Done";
+            chkDone.UseVisualStyleBackColor = true;
+            // 
+            // frmToDoList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(852, 286);
-            Controls.Add(rbtDone);
-            Controls.Add(label5);
+            ClientSize = new Size(859, 236);
+            Controls.Add(chkDone);
+            Controls.Add(rbtTrivial);
+            Controls.Add(lblAddYourTasks);
             Controls.Add(lsvTask);
-            Controls.Add(label4);
+            Controls.Add(lblNotes);
             Controls.Add(txtNotes);
-            Controls.Add(label3);
+            Controls.Add(lblDeadline);
             Controls.Add(rbtUrgent);
-            Controls.Add(label2);
+            Controls.Add(lblTask);
             Controls.Add(txtDeadline);
             Controls.Add(txtTask);
             Controls.Add(btnSave);
@@ -264,9 +284,9 @@
             Controls.Add(btnFix);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Name = "Todolist";
-            Text = "To do list";
-            Load += Todolist_Load;
+            Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "frmToDoList";
+            Text = "To Do List";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,9 +297,9 @@
         private TextBox txtNotes;
         private TextBox txtDeadline;
         private TextBox txtTask;
-        private Label label4;
-        private Label label3;
-        private Label label2;
+        private Label lblNotes;
+        private Label lblDeadline;
+        private Label lblTask;
         private ListView lsvTask;
         private RadioButton rbtUrgent;
         private Button btnDelete;
@@ -291,7 +311,8 @@
         private Button btnSave;
         private ColumnHeader columnPriority;
         private ColumnHeader columnStatus;
-        private Label label5;
-        private RadioButton rbtDone;
+        private Label lblAddYourTasks;
+        private RadioButton rbtTrivial;
+        private CheckBox chkDone;
     }
 }
